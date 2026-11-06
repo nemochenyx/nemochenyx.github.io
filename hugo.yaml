@@ -7,7 +7,7 @@ params:
   description: "Yuxing (Nemo) Chen / 陈禹行 — Ph.D. student in Government at Harvard University. State capacity, development, bureaucratic reform, and historical political economy."
   author: "Yuxing (Nemo) Chen"
   mysite:
-    credit: true
+    credit: false
     discovery: false
     design:
       reference: "https://sites.google.com/umich.edu/jeanhong/home"

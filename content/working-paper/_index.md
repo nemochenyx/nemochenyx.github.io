@@ -3,12 +3,11 @@ title: Working Paper
 description: "Working paper and ongoing research on historical education, agricultural aid, infrastructure, and land dispossession."
 ---
 
-## Under Review
+## Working Paper
 
 ### More is not Necessarily Better: Rethinking Colonial Education and Long-term Development
 
-With **Dongzhu Xu** (SOAS University of London)  
-*Under review*
+With **Bingjun Tang** (Harvard University) **Dongzhu Xu** (SOAS University of London)  
 
 This paper studies colonial and pre-colonial education in Manchuria using a geographic regression discontinuity design based on historical provincial borders. Combining archival education data from the 1910s–1945 with outcomes from 1980–2010, it finds that pre-colonial state-led education had stronger effects on literacy and higher education enrollment than colonial initiatives.
 

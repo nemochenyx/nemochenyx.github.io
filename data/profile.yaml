@@ -1,0 +1,16 @@
+# 全站共用的姓名、身份、联系方式。在引号内修改文字即可。
+name: "Yuxing (Nemo) Chen"
+chinese_name: "陈禹行"
+role: "Ph.D. Student in Government"
+institution: "Harvard University"
+institution_url: "https://www.harvard.edu/"
+department: "Department of Government"
+department_url: "https://www.gov.harvard.edu/"
+email: "nemochen@g.harvard.edu"
+photo: "images/headshot.webp"
+cv: "files/cv/YC_CV.pdf"
+cv_date: "October 2026"
+links:
+  - label: "LinkedIn"
+    url: "https://www.linkedin.com/in/ynch/"
+

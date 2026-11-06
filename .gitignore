@@ -1,0 +1,14 @@
+.DS_Store
+.local/
+.hugo_build.lock
+public/
+resources/_gen/
+tmp/
+materials/
+docs/references/*_PROMPT.md
+docs/references/*_INTAKE.txt
+docs/qa/
+*.log
+.env
+.env.*
+

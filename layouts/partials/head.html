@@ -1,0 +1,26 @@
+{{ $profile := site.Data.profile }}
+{{ $title := printf "%s | %s" .Title $profile.name }}
+{{ if .IsHome }}{{ $title = printf "%s / %s" $profile.name $profile.chinese_name }}{{ end }}
+{{ $description := .Description | default site.Params.description }}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+<meta name="author" content="{{ $profile.name }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ $profile.name }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $profile.photo | absURL }}">
+<meta property="og:image:alt" content="Portrait of {{ $profile.name }}">
+{{ $css := resources.Get "css/style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ if .IsHome }}
+{{ $identity := dict "@context" "https://schema.org" "@type" "Person" "name" $profile.name "alternateName" $profile.chinese_name "url" site.BaseURL "image" ($profile.photo | absURL) "email" (printf "mailto:%s" $profile.email) "affiliation" (dict "@type" "CollegeOrUniversity" "name" $profile.institution) }}
+<script type="application/ld+json">{{ $identity | jsonify | safeJS }}</script>
+{{ end }}
+

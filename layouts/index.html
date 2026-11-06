@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ $profile := site.Data.profile }}
+<div class="home container">
+  <header class="identity">
+    <h1>{{ $profile.name }}</h1>
+    <p class="chinese-name" lang="zh-Hans">{{ $profile.chinese_name }}</p>
+    <p class="role">{{ $profile.role }}</p>
+    <p class="institution"><a href="{{ $profile.institution_url }}" target="_blank" rel="noopener noreferrer">{{ $profile.institution }}</a></p>
+  </header>
+  <div class="bio-layout">
+    <aside class="portrait-column" aria-label="Portrait and contact">
+      <img class="portrait" src="{{ $profile.photo | relURL }}" width="600" height="839" alt="Portrait of {{ $profile.name }}" fetchpriority="high">
+      <div class="portrait-contact">
+        <p><a href="mailto:{{ $profile.email }}">{{ $profile.email }}</a></p>
+        <p><a href="{{ $profile.department_url }}" target="_blank" rel="noopener noreferrer">{{ $profile.department }}</a><br>{{ $profile.institution }}</p>
+      </div>
+    </aside>
+    <article class="bio prose" aria-label="Biography">
+      {{ .Content }}
+      <div class="profile-links">
+        <a class="cv-button" href="{{ $profile.cv | relURL }}" target="_blank" rel="noopener noreferrer">CV <span>(PDF) ↗</span></a>
+        <a href="mailto:{{ $profile.email }}">Email</a>
+        {{ range $profile.links }}<a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} ↗</a>{{ end }}
+      </div>
+    </article>
+  </div>
+</div>
+{{ end }}
+

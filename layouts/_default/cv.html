@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ $profile := site.Data.profile }}
+<article class="page container cv-page">
+  <header class="page-heading cv-heading">
+    <div><h1>{{ .Title }}</h1><p>{{ $profile.name }} · {{ $profile.cv_date }}</p></div>
+    <a class="cv-button" href="{{ $profile.cv | relURL }}" target="_blank" rel="noopener noreferrer">Download CV <span>(PDF) ↗</span></a>
+  </header>
+  <details class="cv-preview">
+    <summary>View PDF in this page</summary>
+    <object data="{{ $profile.cv | relURL }}" type="application/pdf" width="100%" height="780" aria-label="Curriculum vitae PDF">
+      <p><a href="{{ $profile.cv | relURL }}">Open the CV PDF</a></p>
+    </object>
+  </details>
+  <div class="prose page-prose">{{ .Content }}</div>
+</article>
+{{ end }}
+

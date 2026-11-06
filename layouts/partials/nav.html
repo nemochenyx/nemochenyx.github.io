@@ -1,0 +1,12 @@
+{{ $current := .RelPermalink }}
+<header class="site-header">
+  <nav class="navigation" aria-label="Main navigation">
+    <a class="brand" href="{{ "/" | relURL }}">{{ site.Data.profile.name }}</a>
+    <div class="nav-links">
+      {{ range site.Menus.main }}
+      <a href="{{ .URL | relURL }}"{{ if eq $current .URL }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+    </div>
+  </nav>
+</header>
+
